@@ -6,9 +6,14 @@ new_list = [
         {'name': 'Эдуард', 'age': 48, 'job': 'Big boss'},
     ]
 
-with open('export.csv', 'w', encoding='utf-8', newline="") as lis:
-    fields = ['name', 'age', 'job']
-    writer = csv.DictWriter(lis, fields, delimiter=';')
-    writer.writeheader()
-    for new in new_list:
-        writer.writerow(new)
+def main():
+
+    with open('export.csv', 'w', encoding='utf-8', newline="") as lis:
+        fields = ['name', 'age', 'job']
+        writer = csv.DictWriter(lis, fields, delimiter=';')
+        writer.writeheader()
+        for new in new_list:
+            writer.writerow(new)
+
+if __name__ == "__main__":
+    main()
